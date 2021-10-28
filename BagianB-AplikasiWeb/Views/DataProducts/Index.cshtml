@@ -1,0 +1,46 @@
+﻿@model List<BagianB_AplikasiWeb.Models.DataProduct>
+
+@{
+    ViewData["Title"] = "Data Products";
+}
+
+<h1>Data Products</h1>
+
+<p>
+    <a asp-action="Create">Tambah Baru</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                No
+            </th> 
+            <th>
+                Nama
+            </th>
+            <th>
+                Harga
+            </th>
+            <th>
+                Deskripsi
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>@(i + 1).</td>
+                <td>@Model[i].Nama </td>
+                <td>@Model[i].Harga </td>
+                <td>@Model[i].Deskripsi </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@Model[i].Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@Model[i].Id">Detail</a> |
+                    <a asp-action="Delete" asp-route-id="@Model[i].Id">Hapus</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

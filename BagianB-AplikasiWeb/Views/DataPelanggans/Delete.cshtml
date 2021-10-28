@@ -1,0 +1,39 @@
+﻿@model BagianB_AplikasiWeb.Models.DataPelanggan
+
+@{
+    ViewData["Title"] = "Hapus";
+}
+
+<h1>Hapus</h1>
+
+<h3>Apakah anda yakin ingin menghapus data ini?</h3>
+<div>
+    <h4>Data Pelanggan</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nama)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nama)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Alamat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Alamat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NoTelp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NoTelp)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Hapus" class="btn btn-danger" /> |
+        <a asp-action="Index">Kembali</a>
+    </form>
+</div>
