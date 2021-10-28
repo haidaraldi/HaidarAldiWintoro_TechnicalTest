@@ -32,7 +32,6 @@ namespace BagianA_1
                     }
                 }
             }
-
             Console.ReadKey();
         }
     }
