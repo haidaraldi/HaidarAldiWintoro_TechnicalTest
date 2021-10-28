@@ -1,0 +1,53 @@
+﻿@model BagianB_AplikasiWeb.ViewModels.DetailTransaksiViewModel
+
+@{
+    ViewData["Title"] = "Data Transaksi";
+}
+@{
+
+    double? subtotal = @Model.DataProduct.Harga * @Model.DetailProductPelanggan.Jumlah;
+
+}
+<h5>Detail Transaksi</h5>
+
+<p align="right">
+    Tanggal :   @Model.DataTransaksi.Tanggal
+</p>
+<p>
+    Kode Transaksi: @Model.DataTransaksi.KodeTransaksi
+</p>
+<p>
+    Pelanggan: @Model.DataPelanggan.Nama
+</p>
+<p>
+    No.Telp: @Model.DataPelanggan.NoTelp
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nama Produk
+            </th>
+            <th>
+                Harga Satuan
+            </th>
+            <th>
+                Jumlah
+            </th>
+            <th>
+                Sub Total
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.DataProduct.Nama </td>
+            <td>@Model.DataProduct.Harga </td>
+            <td>@Model.DetailProductPelanggan.Jumlah </td>
+            <td> @subtotal</td>
+        </tr>
+    </tbody>
+</table>
+<p>Total : @Model.DataTransaksi.Total</p>

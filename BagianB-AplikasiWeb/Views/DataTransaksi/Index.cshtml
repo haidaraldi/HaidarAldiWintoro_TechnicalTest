@@ -37,7 +37,7 @@
                 <td>@Model[i].Pelanggan </td>
                 <td>@Model[i].Total </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@Model[i].Id">Detail</a> |
+                    <a asp-action="Details" asp-route-pelanggan="@Model[i].Pelanggan">Detail</a>
                 </td>
             </tr>
         }

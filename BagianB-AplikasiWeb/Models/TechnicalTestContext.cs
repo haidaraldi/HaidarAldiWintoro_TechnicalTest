@@ -22,12 +22,13 @@ namespace BagianB_AplikasiWeb.Models
         public virtual DbSet<DataPelanggan> DataPelanggan { get; set; }
         public virtual DbSet<DataProduct> DataProduct { get; set; }
         public virtual DbSet<DataTransaksi> DataTransaksi { get; set; }
+        public virtual DbSet<DetailProductPelanggan> DetailProductPelanggan { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Name=DB");
+                optionsBuilder.UseSqlServer("Name=KPPDB");
             }
         }
 
@@ -69,6 +70,13 @@ namespace BagianB_AplikasiWeb.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.Tanggal).HasColumnType("date");
+            });
+
+            modelBuilder.Entity<DetailProductPelanggan>(entity =>
+            {
+                entity.Property(e => e.Pelanggan)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);
