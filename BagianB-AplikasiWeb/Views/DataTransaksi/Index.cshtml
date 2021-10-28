@@ -1,0 +1,45 @@
+﻿@model List<BagianB_AplikasiWeb.Models.DataTransaksi>
+
+@{
+    ViewData["Title"] = "Data Transaksi";
+}
+
+<h1>Data Transaksi</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                No
+            </th>
+            <th>
+                Kode Transaksi
+            </th>
+            <th>
+                Tanggal
+            </th>
+            <th>
+                Pelanggan
+            </th>
+            <th>
+                Total
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>@(i + 1).</td>
+                <td>@Model[i].KodeTransaksi </td>
+                <td>@Model[i].Tanggal </td>
+                <td>@Model[i].Pelanggan </td>
+                <td>@Model[i].Total </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@Model[i].Id">Detail</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

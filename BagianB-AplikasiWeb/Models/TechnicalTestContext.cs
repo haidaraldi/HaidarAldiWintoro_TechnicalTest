@@ -21,6 +21,7 @@ namespace BagianB_AplikasiWeb.Models
 
         public virtual DbSet<DataPelanggan> DataPelanggan { get; set; }
         public virtual DbSet<DataProduct> DataProduct { get; set; }
+        public virtual DbSet<DataTransaksi> DataTransaksi { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -54,6 +55,20 @@ namespace BagianB_AplikasiWeb.Models
                 entity.Property(e => e.Nama)
                     .HasMaxLength(100)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<DataTransaksi>(entity =>
+            {
+                entity.Property(e => e.KodeTransaksi)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Pelanggan)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Tanggal).HasColumnType("date");
             });
 
             OnModelCreatingPartial(modelBuilder);
