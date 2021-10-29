@@ -22,3 +22,8 @@ Panduan Untuk Running Aplikasi
 18. Tekan ctrl + f5 atau ke bagian tab Debug klik Start without debugging
 19. Aplikasi akan running dan silakan uji coba sesuai keinginan anda
 20. Selesai
+
+#Notes :
+Ini merupakan contoh untuk menjalankan Store Procedurenya
+
+EXEC SP_InsertDataTransaksi @Tanggal = '2021-10-29', @Pelanggan = 'Aldi', @Total = 200000, @IdProduk = 2, @Jumlah = 2
