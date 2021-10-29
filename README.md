@@ -8,7 +8,7 @@ Panduan Untuk Running Aplikasi
 4. Untuk melakukan running pada bagian A, silakan klik kanan pada projek yang ingin dirunning (Tepat berada dibawah solution) pilih "Set as Startup Project"
 5. Setelah dipilih tekan ctrl + f5 atau ke bagian tab Debug klik Start without debugging
 6. Aplikasi akan running dan silakan uji coba sesuai keinginan anda
-7. Setelah selesai, jika ingin running pada bagian B, silahkan expand projek  alu copy "TechnicalTest.bak" pada folder database dan simpan pada direktori yang anda inginkan
+7. Setelah selesai, jika ingin running pada bagian B, silahkan expand projek  lalu copy "TechnicalTest.bak" pada folder database dan simpan pada direktori yang anda inginkan
 8. Buka SQL Server Management Studio
 9. Klik kanan pada folder databases pilih "Restore Databases"
 10. Pada tab General pilih device pada bagian Device lalu klik icon dipojek kanan
